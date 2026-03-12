@@ -1,0 +1,272 @@
+---
+import '@fontsource-variable/oswald';
+import '@fontsource-variable/inter';
+import CookieBanner from "../components/CookieBanner.astro";
+import oswaldFontUrl from '@fontsource-variable/oswald/files/oswald-latin-wght-normal.woff2?url';
+import interFontUrl from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+
+export interface Props {
+  title: string;
+  description?: string;
+  hasHero?: boolean;
+  heroImage?: string;
+  heroImageMq?: string;
+}
+
+const {
+  title = "Val-Traktori",
+  description = "Val-Traktori – traktorien ja maatalouskoneiden huolto, varaosat ja myymälä.",
+  hasHero = false,
+  heroImage,
+  heroImageMq = "(min-width: 768px)",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={`${title} | Val-Traktori`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fi_FI" />
+    <title>{title} | Val-Traktori</title>
+
+    <link rel="preload" as="font" type="font/woff2" href={oswaldFontUrl} crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href={interFontUrl} crossorigin="anonymous" />
+
+    {heroImage && (
+      <link rel="preload" as="image" href={heroImage} fetchpriority="high" media={heroImageMq} />
+    )}
+  </head>
+  <body class="bg-white text-gray-900 min-h-screen flex flex-col font-body">
+
+    <header id="site-header" class="bg-white shadow-sm sticky top-0 z-40">
+      <div class="max-w-7xl mx-auto px-4 md:px-8 py-4">
+        <nav class="flex justify-between items-center">
+
+          <!-- Logo -->
+          <a href="/" class="flex items-center font-heading font-bold text-xl text-gray-900 hover:text-green-700 transition-colors">
+            Val-Traktori
+          </a>
+
+          <!-- Desktop nav -->
+          <div class="hidden xl:flex xl:items-center xl:gap-6 h-full">
+
+            <!-- Palvelut -->
+            <div class="relative group h-full flex items-center">
+              <a href="/palvelut" class="flex items-center gap-1 text-sm font-medium py-4 hover:text-green-700 transition-colors">
+                Palvelut
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
+                </svg>
+              </a>
+              <div class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block z-50 w-52">
+                <div class="bg-white text-gray-900 shadow-lg rounded-b border-t-2 border-green-700">
+                  <a href="/palvelut/varaosamyynti" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Varaosamyynti</a>
+                  <a href="/palvelut/huoltosarjat" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Huoltosarjat</a>
+                  <a href="/palvelut/kulutusosat" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Kulutusosat</a>
+                  <a href="/palvelut/lasertyovalot" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Lasertyövalot</a>
+                  <a href="/palvelut/harjakset" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Harjakset</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Huolto -->
+            <div class="relative group h-full flex items-center">
+              <a href="/huolto" class="flex items-center gap-1 text-sm font-medium py-4 hover:text-green-700 transition-colors">
+                Huolto
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
+                </svg>
+              </a>
+              <div class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block z-50 w-56">
+                <div class="bg-white text-gray-900 shadow-lg rounded-b border-t-2 border-green-700">
+                  <a href="/huolto/traktorit-ja-puimurit" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Traktorit ja puimurit</a>
+                  <a href="/huolto/metsa-ja-maansiirto-koneet" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Metsä- ja maansiirtokoneet</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kausipalvelut -->
+            <div class="relative group h-full flex items-center">
+              <a href="/kausipalvelut/kevat" class="flex items-center gap-1 text-sm font-medium py-4 hover:text-green-700 transition-colors">
+                Kausipalvelut
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
+                </svg>
+              </a>
+              <div class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block z-50 w-40">
+                <div class="bg-white text-gray-900 shadow-lg rounded-b border-t-2 border-green-700">
+                  <a href="/kausipalvelut/kevat" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Kevät</a>
+                  <a href="/kausipalvelut/kesa" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Kesä</a>
+                  <a href="/kausipalvelut/syksy" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Syksy</a>
+                  <a href="/kausipalvelut/talvi" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Talvi</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="/myymala" class="text-sm font-medium py-4 hover:text-green-700 transition-colors">Myymälä</a>
+            <a href="/yhteystiedot" class="text-sm font-medium py-4 hover:text-green-700 transition-colors">Yhteystiedot</a>
+          </div>
+
+          <!-- Mobile hamburger -->
+          <div class="xl:hidden">
+            <button id="menu-toggle" class="p-2" aria-label="Avaa valikko">
+              <div class="w-7 h-5 relative flex flex-col justify-between">
+                <span class="w-full h-0.5 bg-gray-900"></span>
+                <span class="w-full h-0.5 bg-gray-900"></span>
+                <span class="w-full h-0.5 bg-gray-900"></span>
+              </div>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-[100] bg-white overflow-y-auto">
+      <div class="flex flex-col px-6 pt-6 min-h-screen">
+        <div class="flex justify-end mb-8">
+          <button id="close-menu" aria-label="Sulje valikko" class="relative w-8 h-8">
+            <span class="absolute top-1/2 left-1/2 w-7 h-0.5 bg-gray-900 origin-center rotate-45 -translate-x-1/2 -translate-y-1/2"></span>
+            <span class="absolute top-1/2 left-1/2 w-7 h-0.5 bg-gray-900 origin-center -rotate-45 -translate-x-1/2 -translate-y-1/2"></span>
+          </button>
+        </div>
+
+        <nav class="flex flex-col gap-6">
+
+          <div class="flex flex-col gap-2">
+            <button data-mobile-toggle="palvelut" class="flex items-center gap-2 font-heading font-bold text-xl text-gray-900 text-left">
+              Palvelut
+              <svg data-arrow="palvelut" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 transition-transform duration-200">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="sub-palvelut" class="hidden flex-col gap-3 pl-4">
+              <a href="/palvelut/varaosamyynti" class="text-gray-600 hover:text-green-700">Varaosamyynti</a>
+              <a href="/palvelut/huoltosarjat" class="text-gray-600 hover:text-green-700">Huoltosarjat</a>
+              <a href="/palvelut/kulutusosat" class="text-gray-600 hover:text-green-700">Kulutusosat</a>
+              <a href="/palvelut/lasertyovalot" class="text-gray-600 hover:text-green-700">Lasertyövalot</a>
+              <a href="/palvelut/harjakset" class="text-gray-600 hover:text-green-700">Harjakset</a>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <button data-mobile-toggle="huolto" class="flex items-center gap-2 font-heading font-bold text-xl text-gray-900 text-left">
+              Huolto
+              <svg data-arrow="huolto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 transition-transform duration-200">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="sub-huolto" class="hidden flex-col gap-3 pl-4">
+              <a href="/huolto/traktorit-ja-puimurit" class="text-gray-600 hover:text-green-700">Traktorit ja puimurit</a>
+              <a href="/huolto/metsa-ja-maansiirto-koneet" class="text-gray-600 hover:text-green-700">Metsä- ja maansiirtokoneet</a>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <button data-mobile-toggle="kausipalvelut" class="flex items-center gap-2 font-heading font-bold text-xl text-gray-900 text-left">
+              Kausipalvelut
+              <svg data-arrow="kausipalvelut" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 transition-transform duration-200">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="sub-kausipalvelut" class="hidden flex-col gap-3 pl-4">
+              <a href="/kausipalvelut/kevat" class="text-gray-600 hover:text-green-700">Kevät</a>
+              <a href="/kausipalvelut/kesa" class="text-gray-600 hover:text-green-700">Kesä</a>
+              <a href="/kausipalvelut/syksy" class="text-gray-600 hover:text-green-700">Syksy</a>
+              <a href="/kausipalvelut/talvi" class="text-gray-600 hover:text-green-700">Talvi</a>
+            </div>
+          </div>
+
+          <a href="/myymala" class="font-heading font-bold text-xl text-gray-900">Myymälä</a>
+          <a href="/yhteystiedot" class="font-heading font-bold text-xl text-gray-900">Yhteystiedot</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class={`flex-grow${hasHero ? '' : ' pt-8'}`}>
+      <slot />
+    </main>
+
+    <footer class="bg-gray-900 text-white mt-16">
+      <div class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+          <div>
+            <h3 class="font-heading font-bold text-lg mb-4">Val-Traktori</h3>
+            <p class="text-gray-400 text-sm">Traktorien ja maatalouskoneiden huolto, varaosat ja myymälä.</p>
+          </div>
+
+          <div>
+            <h3 class="font-heading font-bold text-lg mb-4">Sivut</h3>
+            <nav class="flex flex-col gap-2 text-sm text-gray-400">
+              <a href="/palvelut" class="hover:text-white transition-colors">Palvelut</a>
+              <a href="/huolto" class="hover:text-white transition-colors">Huolto</a>
+              <a href="/myymala" class="hover:text-white transition-colors">Myymälä</a>
+              <a href="/yhteystiedot" class="hover:text-white transition-colors">Yhteystiedot</a>
+            </nav>
+          </div>
+
+          <div>
+            <h3 class="font-heading font-bold text-lg mb-4">Yhteystiedot</h3>
+            <address class="not-italic text-sm text-gray-400 flex flex-col gap-2">
+              <span><!-- Osoite --></span>
+              <a href="tel:+358000000000" class="hover:text-white transition-colors"><!-- Puhelin --></a>
+              <a href="mailto:info@val-traktori.fi" class="hover:text-white transition-colors">info@val-traktori.fi</a>
+            </address>
+          </div>
+
+        </div>
+        <div class="mt-10 pt-6 border-t border-gray-800 text-xs text-gray-500">
+          © Val-Traktori {new Date().getFullYear()}
+        </div>
+      </div>
+    </footer>
+
+    <CookieBanner />
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const closeMenuBtn = document.getElementById("close-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle?.addEventListener("click", () => {
+        mobileMenu?.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      });
+      closeMenuBtn?.addEventListener("click", () => {
+        mobileMenu?.classList.add("hidden");
+        document.body.style.overflow = "";
+      });
+      mobileMenu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu?.classList.add("hidden");
+          document.body.style.overflow = "";
+        });
+      });
+
+      document.querySelectorAll("[data-mobile-toggle]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const key = btn.getAttribute("data-mobile-toggle");
+          const submenu = document.getElementById(`sub-${key}`);
+          const arrow = document.querySelector(`[data-arrow="${key}"]`);
+          const isOpen = submenu && !submenu.classList.contains("hidden");
+          submenu?.classList.toggle("hidden", !!isOpen);
+          submenu?.classList.toggle("flex", !isOpen);
+          arrow?.classList.toggle("rotate-180", !isOpen);
+        });
+      });
+    </script>
+  </body>
+</html>

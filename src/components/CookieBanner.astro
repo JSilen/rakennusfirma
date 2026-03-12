@@ -1,0 +1,114 @@
+<div 
+  id="cookie-banner" 
+  class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] md:w-auto md:min-w-[650px] bg-musta2 border-t-2 border-keltainen p-4 md:p-6 shadow-2xl z-[100] hidden font-body"
+>
+  <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+    <div class="flex-1 text-center md:text-left">
+      <h2 class="text-base font-heading text-keltainen font-semibold mb-1">Evästeet & yksityisyys</h2>
+      <p class="text-xs md:text-sm text-valkoinen/80 leading-relaxed">
+        Käytämme evästeitä analysoidaksemme liikennettä ja parantaaksemme käyttäjäkokemusta. 
+        <a href="/yhteystiedot" class="underline hover:text-keltainen transition-colors">Lue lisää tietosuojasta.</a>
+      </p>
+    </div>
+    
+    <div class="flex gap-3 shrink-0">
+      <button id="decline-cookies" class="px-4 py-2 bg-transparent border border-valkoinen/40 text-valkoinen text-xs md:text-sm font-medium rounded-[1px] hover:border-valkoinen transition-colors">
+        Hylkää kaikki
+      </button>
+      <button id="accept-cookies" class="group px-4 py-2 bg-keltainen text-musta text-xs md:text-sm font-semibold rounded-[1px] border-2 border-transparent hover:border-keltainen hover:text-valkoinen hover:bg-musta transition-all">
+        Hyväksy kaikki
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('accept-cookies');
+  const declineBtn = document.getElementById('decline-cookies');
+
+  const currentConsent = localStorage.getItem('val_traktori_cookie_consent');
+
+  if (!currentConsent) {
+    banner?.classList.remove('hidden');
+  }
+
+  const PLACEHOLDER_ID_PREFIX = 'tm-consent-placeholder-';
+  const PLACEHOLDER_HTML = `
+    <div class="flex flex-col items-center justify-center gap-3 py-10 px-6 border border-white/10 rounded-[1px] text-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+      </svg>
+      <p class="text-sm text-white/50 font-body">Hyväksy evästeet nähdäksesi käyttäjäarvostelut</p>
+      <button
+        onclick="document.getElementById('cookie-banner')?.classList.remove('hidden');"
+        class="group px-4 py-2 bg-keltainen text-musta text-xs font-semibold rounded-[1px] border-2 border-transparent hover:border-keltainen hover:text-valkoinen hover:bg-musta transition-all font-body"
+      >
+        Hallitse evästeasetuksia
+      </button>
+    </div>
+  `;
+
+  function injectPlaceholders() {
+    document.querySelectorAll('[id="trustmary-widget-container"]').forEach((el, i) => {
+      if (!el.nextElementSibling?.id?.startsWith(PLACEHOLDER_ID_PREFIX)) {
+        const ph = document.createElement('div');
+        ph.id = PLACEHOLDER_ID_PREFIX + i;
+        el.after(ph);
+        ph.innerHTML = PLACEHOLDER_HTML;
+      }
+    });
+  }
+
+  function removePlaceholders() {
+    document.querySelectorAll('[id^="tm-consent-placeholder-"]').forEach(el => el.remove());
+  }
+
+  if (currentConsent !== 'granted') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', injectPlaceholders);
+    } else {
+      injectPlaceholders();
+    }
+  }
+
+  window.addEventListener('val_traktori_consent_granted', removePlaceholders);
+
+  function loadTrustmary() {
+    if (document.getElementById('trustmary-embed')) return;
+    (function (w,d,s,o,r,js,fjs) {
+      w[r]=w[r]||function() {(w[r].q = w[r].q || []).push(arguments)}
+      w[r]('app', 'cFb2_Bs7I');
+      js = d.createElement(s); fjs = d.getElementsByTagName(s)[0];
+      js.id = o; js.src = 'https://embed.trustmary.com/embed.js';
+      js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+    }(window, document, 'script', 'trustmary-embed', 'tmary'));
+  }
+
+  function handleConsent(status) {
+    localStorage.setItem('val_traktori_cookie_consent', status);
+    banner?.classList.add('hidden');
+    
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'analytics_storage': status,
+        'ad_storage': status,
+        'ad_user_data': status,
+        'ad_personalization': status
+      });
+      
+      window.dataLayer.push({
+        event: 'consent_update',
+        consent_status: status
+      });
+    }
+
+    if (status === 'granted') {
+      loadTrustmary();
+      window.dispatchEvent(new Event('val_traktori_consent_granted'));
+    }
+  }
+
+  acceptBtn?.addEventListener('click', () => handleConsent('granted'));
+  declineBtn?.addEventListener('click', () => handleConsent('denied'));
+</script>

@@ -1,0 +1,77 @@
+/* 
+ * Tämä tiedosto sisältää globaalit tyylit, jotka eivät ole kriittisiä ensimmäisen renderöinnin kannalta.
+ * Kriittiset tyylit ovat nyt inline-muodossa Layout.astro-tiedostossa.
+ */
+
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+ /* Estetään sivusuuntainen ylivuoto iOS Safarissa */
+ html {
+   overflow-x: hidden;
+ }
+
+ body {
+   overflow-x: hidden;
+   overscroll-behavior-x: none; /* Estää iOS:n horisontaalisen bounce-scrollauksen moderneissa selaimissa */
+ }
+
+ /* Tasapainotetaan otsakkeet ja otetaan tavutus käyttöön mobiilissa */
+ h1, h2, h3, h4 {
+   text-wrap: balance;
+   hyphens: auto;
+ }
+ 
+ /* Muut Tailwind-luokat */
+ @layer components {
+   .btn-primary {
+     @apply bg-bt-green text-bt-white px-6 py-3 rounded-md hover:bg-opacity-90 transition-colors;
+   }
+   
+   .btn-secondary {
+     @apply bg-bt-white text-bt-green border border-bt-green px-6 py-3 rounded-md hover:bg-bt-light-green transition-colors;
+   }
+ }
+ 
+ /* Animaatiot */
+ .fade-in {
+   animation: fadeIn 0.5s ease-in-out;
+ }
+ 
+ @keyframes fadeIn {
+   from {
+     opacity: 0;
+   }
+   to {
+     opacity: 1;
+   }
+ }
+ 
+ /* Utilities */
+ .container {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 1rem;
+ }
+ 
+ /* Responsiiviset media query -korjaukset poistettu - Tailwind hoitaa nämä automaattisesti */
+ 
+ /* Kuvien optimointi */
+ img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+ }
+ 
+ /* Saavutettavuusparannukset */
+ :focus {
+   outline: 2px solid var(--bt-green);
+   outline-offset: 2px;
+ }
+ 
+ /* Siirtymäefektit */
+ a, button {
+   transition: all 0.2s ease;
+ }
