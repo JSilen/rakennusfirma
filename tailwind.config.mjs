@@ -21,11 +21,11 @@ export default {
         'nav': '1024px',
       },
       colors: {
-        'brand': '#16a34a', // TODO: vaihda asiakkaan pääväri
-        'sininen': '#000B22',
-        'sininen2': '#BFDCEE',
-        'sininen3': '#08348C',
-        'punainen': '#C4161C',
+        'valkoinen': '#fefefe',
+        'oranssi': '#fd8029',
+        'hover-oranssi': '#FF9C58',
+        'harmaa': '#f4f1ec',
+        'musta': '#2b2b2b',
         'info': '#2f80ed',
         'success': '#27ae60',
         'warning': '#e2b93b',
@@ -38,34 +38,36 @@ export default {
         'gray2': '#4f4f4f',
         'gray3': '#828282',
         'gray4': '#bdbdbd',
-        'valkoinen': '#e0e0e0',
+        'white': '#e0e0e0',
       },
       fontFamily: {
-        'heading': ['Oswald Variable', 'Oswald', 'sans-serif'],
-        'body': ['Inter Variable', 'Inter', 'sans-serif'],
+        'heading': ['IBM Plex Sans', 'sans-serif'],
+        'body': ['IBM Plex Sans', 'sans-serif'],
       },
       fontSize: {
-        // === Desktop (Oswald headings) ===
-        'h1-d': ['4.5rem',   { lineHeight: '79.2px' }],
-        'h2-d': ['2.75rem',  { lineHeight: '46.2px' }],
-        'h3-d': ['2rem',     { lineHeight: '38.4px' }],
-        'h4-d': ['1.75rem',  { lineHeight: '33.6px' }],
-        'h5-d': ['1.5rem',   { lineHeight: '28.8px' }],
-        'h6-d': ['1.25rem',  { lineHeight: '24px'   }],
+        // === Desktop (IBM Plex Sans headings) ===
+        'h1-d':       ['4.5rem',   { lineHeight: '75.2px'  }],
+        'h2-d':       ['2.75rem',  { lineHeight: '46.2px'  }],
+        'h3-d':       ['2rem',     { lineHeight: '38.4px'  }],
+        'h4-d':       ['1.75rem',  { lineHeight: '31.2px'  }],
+        'h5-d':       ['1.5rem',   { lineHeight: '28px'    }],
+        'h6-d':       ['1.25rem',  { lineHeight: '22px'    }],
+        'visual-xl-d':['6rem',     { lineHeight: '105.6px' }],
 
-        // === Mobile (Oswald headings) ===
-        'h1-m': ['2.5rem',   { lineHeight: '44px'   }],
-        'h2-m': ['2.25rem',  { lineHeight: '43.2px' }],
-        'h3-m': ['2rem',     { lineHeight: '38.4px' }],
-        'h4-m': ['1.5rem',   { lineHeight: '26.4px' }],
-        'h5-m': ['1.25rem',  { lineHeight: '24px'   }],
-        'h6-m': ['1.125rem', { lineHeight: '21.6px' }],
+        // === Mobile (IBM Plex Sans headings) ===
+        'h1-m':       ['2.75rem',  { lineHeight: '48.4px' }],
+        'h2-m':       ['2.25rem',  { lineHeight: '43.2px' }],
+        'h3-m':       ['2rem',     { lineHeight: '38.4px' }],
+        'h4-m':       ['1.5rem',   { lineHeight: '28.8px' }],
+        'h5-m':       ['1.25rem',  { lineHeight: '24px'   }],
+        'h6-m':       ['1.125rem', { lineHeight: '21.6px' }],
+        'visual-xl-m':['4.5rem',   { lineHeight: '79.2px' }],
 
-        // === Body (Inter) – same desktop & mobile ===
-        'body-large':  ['1.25rem',   { lineHeight: '28px' }],
-        'body-medium': ['1.125rem',  { lineHeight: '22px' }],
-        'body-normal': ['1rem',      { lineHeight: '24px' }],
-        'body-small':  ['0.875rem',  { lineHeight: '21px' }],
+        // === Body (IBM Plex Sans) – sama desktop & mobile ===
+        'body-large':  ['1.25rem',  { lineHeight: '28px' }],
+        'body-medium': ['1.125rem', { lineHeight: '22px' }],
+        'body-normal': ['1rem',     { lineHeight: '24px' }],
+        'body-small':  ['0.875rem', { lineHeight: '21px' }],
       },
 
       spacing: {

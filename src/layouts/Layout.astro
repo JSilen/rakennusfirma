@@ -1,9 +1,9 @@
 ---
-import '@fontsource-variable/oswald';
-import '@fontsource-variable/inter';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/700.css';
 import CookieBanner from "../components/CookieBanner.astro";
-import oswaldFontUrl from '@fontsource-variable/oswald/files/oswald-latin-wght-normal.woff2?url';
-import interFontUrl from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import ibmPlexSans400Url from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2?url';
+import ibmPlexSans700Url from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-700-normal.woff2?url';
 
 export interface Props {
   title: string;
@@ -14,8 +14,8 @@ export interface Props {
 }
 
 const {
-  title = "Val-Traktori",
-  description = "Val-Traktori – traktorien ja maatalouskoneiden huolto, varaosat ja myymälä.",
+  title = "J&T Rakennuspalvelu Oy",
+  description = "J&T Rakennuspalvelu Oy – traktorien ja maatalouskoneiden huolto, varaosat ja myymälä.",
   hasHero = false,
   heroImage,
   heroImageMq = "(min-width: 768px)",
@@ -35,97 +35,77 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalURL} />
-    <meta property="og:title" content={`${title} | Val-Traktori`} />
+    <meta property="og:title" content={`${title} | J&T Rakennuspalvelu Oy`} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fi_FI" />
-    <title>{title} | Val-Traktori</title>
+    <title>{title} | J&T Rakennuspalvelu Oy</title>
 
-    <link rel="preload" as="font" type="font/woff2" href={oswaldFontUrl} crossorigin="anonymous" />
-    <link rel="preload" as="font" type="font/woff2" href={interFontUrl} crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href={ibmPlexSans400Url} crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href={ibmPlexSans700Url} crossorigin="anonymous" />
 
     {heroImage && (
       <link rel="preload" as="image" href={heroImage} fetchpriority="high" media={heroImageMq} />
     )}
   </head>
-  <body class="bg-white text-gray-900 min-h-screen flex flex-col font-body">
+  <body class="bg-harmaa text-valkoinen min-h-screen flex flex-col font-body">
 
-    <header id="site-header" class="bg-white shadow-sm sticky top-0 z-40">
-      <div class="max-w-7xl mx-auto px-4 md:px-8 py-4">
-        <nav class="flex justify-between items-center">
+    <header id="site-header" class="bg-musta sticky top-0 z-40">
+      <div class="max-w-8xl mx-auto px-s-4-m md:px-[64px] py-4 md:py-s-3-d">
+        <nav class="relative flex justify-between items-center">
 
-          <!-- Logo -->
-          <a href="/" class="flex items-center font-heading font-bold text-xl text-gray-900 hover:text-green-700 transition-colors">
-            Val-Traktori
+          <!-- Mobile: phone button (left) -->
+          <a href="tel:+358400603295" class="xl:hidden bg-oranssi p-[10px] flex items-center justify-center" aria-label="Soita">
+            <img src="/images/uploads/puhelin.svg" alt="" class="w-6 h-6" aria-hidden="true" />
+          </a>
+
+          <!-- Mobile: logo (centered, absolute) -->
+          <a href="/" class="xl:hidden absolute left-1/2 -translate-x-1/2">
+            <img src="/images/uploads/logo.webp" alt="J&T Rakennuspalvelu Turku logo" class="h-8 w-auto">
+          </a>
+
+          <!-- Desktop: logo (left) -->
+          <a href="/" class="hidden xl:flex items-center font-heading font-bold text-xl text-gray-900 hover:text-oranssi transition-colors">
+            <img src="/images/uploads/logo.webp" alt="J&T Rakennuspalvelu Turku logo" class="h-12 w-auto">
           </a>
 
           <!-- Desktop nav -->
-          <div class="hidden xl:flex xl:items-center xl:gap-6 h-full">
+          <div class="hidden xl:flex xl:items-center xl:gap-s-6-d h-full ">
 
             <!-- Palvelut -->
             <div class="relative group h-full flex items-center">
-              <a href="/palvelut" class="flex items-center gap-1 text-sm font-medium py-4 hover:text-green-700 transition-colors">
+              <a href="/palvelut" class="flex items-center gap-1 text-base font-medium py-4 transition-colors hover:text-oranssi">
                 Palvelut
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180">
                   <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
                 </svg>
               </a>
               <div class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block z-50 w-52">
-                <div class="bg-white text-gray-900 shadow-lg rounded-b border-t-2 border-green-700">
-                  <a href="/palvelut/varaosamyynti" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Varaosamyynti</a>
-                  <a href="/palvelut/huoltosarjat" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Huoltosarjat</a>
-                  <a href="/palvelut/kulutusosat" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Kulutusosat</a>
-                  <a href="/palvelut/lasertyovalot" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Lasertyövalot</a>
-                  <a href="/palvelut/harjakset" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Harjakset</a>
+                <div class="bg-valkoinen text-musta shadow-lg">
+                  <a href="/palvelut/huoneistoremontti" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Huoneistoremontti</a>
+                  <a href="/palvelut/keittioremontti" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Keittiöremontti</a>
+                  <a href="/palvelut/sauna-ja-kylpyhuoneremontti" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Sauna- ja kylpyhuoneremontti</a>
+                  <a href="/palvelut/julkisivuremontti" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Julkisivuremontti</a>
+                  <a href="/palvelut/uudisrakentaminen" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Uudisrakentaminen</a>
                 </div>
               </div>
             </div>
-
-            <!-- Huolto -->
-            <div class="relative group h-full flex items-center">
-              <a href="/huolto" class="flex items-center gap-1 text-sm font-medium py-4 hover:text-green-700 transition-colors">
-                Huolto
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
-                </svg>
-              </a>
-              <div class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block z-50 w-56">
-                <div class="bg-white text-gray-900 shadow-lg rounded-b border-t-2 border-green-700">
-                  <a href="/huolto/traktorit-ja-puimurit" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Traktorit ja puimurit</a>
-                  <a href="/huolto/metsa-ja-maansiirto-koneet" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Metsä- ja maansiirtokoneet</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Kausipalvelut -->
-            <div class="relative group h-full flex items-center">
-              <a href="/kausipalvelut/kevat" class="flex items-center gap-1 text-sm font-medium py-4 hover:text-green-700 transition-colors">
-                Kausipalvelut
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
-                </svg>
-              </a>
-              <div class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block z-50 w-40">
-                <div class="bg-white text-gray-900 shadow-lg rounded-b border-t-2 border-green-700">
-                  <a href="/kausipalvelut/kevat" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Kevät</a>
-                  <a href="/kausipalvelut/kesa" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Kesä</a>
-                  <a href="/kausipalvelut/syksy" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Syksy</a>
-                  <a href="/kausipalvelut/talvi" class="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-green-700 transition-colors">Talvi</a>
-                </div>
-              </div>
-            </div>
-
-            <a href="/myymala" class="text-sm font-medium py-4 hover:text-green-700 transition-colors">Myymälä</a>
-            <a href="/yhteystiedot" class="text-sm font-medium py-4 hover:text-green-700 transition-colors">Yhteystiedot</a>
+            <a href="/yritys" class="text-base font-medium py-4 hover:text-oranssi transition-colors">Yritys</a>
+            <a href="/galleria" class="text-base font-medium py-4 hover:text-oranssi transition-colors">Galleria</a>
+            <a href="/yhteystiedot" class="text-base font-medium py-4 hover:text-oranssi transition-colors">Yhteystiedot</a>
+            <a href="tel:+358400603295" class="group flex items-center gap-2 bg-oranssi text-black font-medium px-s-2-d py-[12px] hover:bg-valkoinen transition-all">
+              <img src="/images/uploads/puhelin.svg" alt="Puhelimen ikoni" class="w-5 h-5 transition-transform duration-300 group-hover:rotate-[-6deg]" aria-hidden="true" />
+              0400 603 295
+            </a>
           </div>
 
           <!-- Mobile hamburger -->
           <div class="xl:hidden">
             <button id="menu-toggle" class="p-2" aria-label="Avaa valikko">
-              <div class="w-7 h-5 relative flex flex-col justify-between">
-                <span class="w-full h-0.5 bg-gray-900"></span>
-                <span class="w-full h-0.5 bg-gray-900"></span>
-                <span class="w-full h-0.5 bg-gray-900"></span>
+              <div class="w-9 h-7 flex flex-col justify-between">
+                <span class="w-1/2 h-[3px] bg-valkoinen self-start"></span>
+                <span class="w-full h-[3px] bg-valkoinen"></span>
+                <span class="w-1/2 h-[3px] bg-valkoinen self-end"></span>
               </div>
             </button>
           </div>
@@ -135,7 +115,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden fixed inset-0 z-[100] bg-white overflow-y-auto">
-      <div class="flex flex-col px-6 pt-6 min-h-screen">
+      <div class="flex flex-col px-s-6-m pt-s-6-m min-h-screen">
         <div class="flex justify-end mb-8">
           <button id="close-menu" aria-label="Sulje valikko" class="relative w-8 h-8">
             <span class="absolute top-1/2 left-1/2 w-7 h-0.5 bg-gray-900 origin-center rotate-45 -translate-x-1/2 -translate-y-1/2"></span>
@@ -146,51 +126,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <nav class="flex flex-col gap-6">
 
           <div class="flex flex-col gap-2">
-            <button data-mobile-toggle="palvelut" class="flex items-center gap-2 font-heading font-bold text-xl text-gray-900 text-left">
+            <button data-mobile-toggle="palvelut" class="flex items-center gap-2 font-heading text-3xl text-gray-900 text-left">
               Palvelut
               <svg data-arrow="palvelut" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 transition-transform duration-200">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
               </svg>
             </button>
             <div id="sub-palvelut" class="hidden flex-col gap-3 pl-4">
-              <a href="/palvelut/varaosamyynti" class="text-gray-600 hover:text-green-700">Varaosamyynti</a>
-              <a href="/palvelut/huoltosarjat" class="text-gray-600 hover:text-green-700">Huoltosarjat</a>
-              <a href="/palvelut/kulutusosat" class="text-gray-600 hover:text-green-700">Kulutusosat</a>
-              <a href="/palvelut/lasertyovalot" class="text-gray-600 hover:text-green-700">Lasertyövalot</a>
-              <a href="/palvelut/harjakset" class="text-gray-600 hover:text-green-700">Harjakset</a>
+              <a href="/palvelut/huoneistoremontti" class="text-gray-900 text-2xl">Huoneistoremontti</a>
+              <a href="/palvelut/keittioremontti" class="text-gray-900 text-2xl">Keittiöremontti</a>
+              <a href="/palvelut/sauna-ja-kylpyhuoneremontti" class="text-gray-900 text-2xl">Sauna- ja kylpyhuoneremontti</a>
+              <a href="/palvelut/julkisivuremontti" class="text-gray-900 text-2xl">Julkisivuremontti</a>
+              <a href="/palvelut/uudisrakentaminen" class="text-gray-900 text-2xl">Uudisrakentaminen</a>
             </div>
           </div>
-
-          <div class="flex flex-col gap-2">
-            <button data-mobile-toggle="huolto" class="flex items-center gap-2 font-heading font-bold text-xl text-gray-900 text-left">
-              Huolto
-              <svg data-arrow="huolto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 transition-transform duration-200">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
-              </svg>
-            </button>
-            <div id="sub-huolto" class="hidden flex-col gap-3 pl-4">
-              <a href="/huolto/traktorit-ja-puimurit" class="text-gray-600 hover:text-green-700">Traktorit ja puimurit</a>
-              <a href="/huolto/metsa-ja-maansiirto-koneet" class="text-gray-600 hover:text-green-700">Metsä- ja maansiirtokoneet</a>
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <button data-mobile-toggle="kausipalvelut" class="flex items-center gap-2 font-heading font-bold text-xl text-gray-900 text-left">
-              Kausipalvelut
-              <svg data-arrow="kausipalvelut" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 transition-transform duration-200">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
-              </svg>
-            </button>
-            <div id="sub-kausipalvelut" class="hidden flex-col gap-3 pl-4">
-              <a href="/kausipalvelut/kevat" class="text-gray-600 hover:text-green-700">Kevät</a>
-              <a href="/kausipalvelut/kesa" class="text-gray-600 hover:text-green-700">Kesä</a>
-              <a href="/kausipalvelut/syksy" class="text-gray-600 hover:text-green-700">Syksy</a>
-              <a href="/kausipalvelut/talvi" class="text-gray-600 hover:text-green-700">Talvi</a>
-            </div>
-          </div>
-
-          <a href="/myymala" class="font-heading font-bold text-xl text-gray-900">Myymälä</a>
-          <a href="/yhteystiedot" class="font-heading font-bold text-xl text-gray-900">Yhteystiedot</a>
+          <a href="/yritys" class="font-heading text-3xl text-gray-900">Yritys</a>
+          <a href="/galleria" class="font-heading text-3xl text-gray-900">Galleria</a>
+          <a href="/yhteystiedot" class="font-heading text-3xl text-gray-900">Yhteystiedot</a>
         </nav>
       </div>
     </div>
@@ -199,37 +151,39 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <slot />
     </main>
 
-    <footer class="bg-gray-900 text-white mt-16">
-      <div class="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <footer class="bg-musta text-valkoinen">
+      <div class="max-w-8xl mx-auto px-s-4-m xl:px-s-6-d py-s-10-d">
+        <div class="flex flex-col gap-10 xl:flex-row xl:gap-0">
 
-          <div>
-            <h3 class="font-heading font-bold text-lg mb-4">Val-Traktori</h3>
-            <p class="text-gray-400 text-sm">Traktorien ja maatalouskoneiden huolto, varaosat ja myymälä.</p>
+          <div class="flex flex-col gap-6">
+            <a href="/">
+              <img src="/images/uploads/logo.webp" alt="J&T Rakennuspalvelu Oy logo" class="h-12 w-auto" />
+            </a>
+            <img src="/images/uploads/luotettava-kumppani.webp" alt="Olen Luotettava Kumppani" class="hidden xl:block w-28 h-auto" />
           </div>
 
-          <div>
-            <h3 class="font-heading font-bold text-lg mb-4">Sivut</h3>
-            <nav class="flex flex-col gap-2 text-sm text-gray-400">
-              <a href="/palvelut" class="hover:text-white transition-colors">Palvelut</a>
-              <a href="/huolto" class="hover:text-white transition-colors">Huolto</a>
-              <a href="/myymala" class="hover:text-white transition-colors">Myymälä</a>
-              <a href="/yhteystiedot" class="hover:text-white transition-colors">Yhteystiedot</a>
+          <div class="xl:ml-[285px]">
+            <h3 class="font-heading font-bold text-base mb-4">Sivut</h3>
+            <nav class="flex flex-col gap-2 text-base text-valkoinen">
+              <a href="/palvelut" class="hover:text-oranssi transition-colors">Palvelut</a>
+              <a href="/yritys" class="hover:text-oranssi transition-colors">Yritys</a>
+              <a href="/galleria" class="hover:text-oranssi transition-colors">Galleria</a>
+              <a href="/yhteystiedot" class="hover:text-oranssi transition-colors">Yhteystiedot</a>
             </nav>
           </div>
 
-          <div>
-            <h3 class="font-heading font-bold text-lg mb-4">Yhteystiedot</h3>
-            <address class="not-italic text-sm text-gray-400 flex flex-col gap-2">
-              <span><!-- Osoite --></span>
-              <a href="tel:+358000000000" class="hover:text-white transition-colors"><!-- Puhelin --></a>
-              <a href="mailto:info@val-traktori.fi" class="hover:text-white transition-colors">info@val-traktori.fi</a>
+          <div class="xl:ml-[285px]">
+            <h3 class="font-heading font-bold text-base mb-4">Yhteystiedot</h3>
+            <address class="not-italic text-base text-valkoinen flex flex-col gap-2">
+              <span>J&amp;T Rakennuspalvelu Oy</span>
+              <a href="tel:+358207750890" class="hover:text-valkoinen transition-colors">puh. 0207 750 890</a>
+              <span>Mäntysaarenkuja 21</span>
+              <span>21330 Paattinen</span>
             </address>
           </div>
 
-        </div>
-        <div class="mt-10 pt-6 border-t border-gray-800 text-xs text-gray-500">
-          © Val-Traktori {new Date().getFullYear()}
+          <img src="/images/uploads/luotettava-kumppani.webp" alt="Olen Luotettava Kumppani" class="xl:hidden w-28 h-auto" />
+
         </div>
       </div>
     </footer>

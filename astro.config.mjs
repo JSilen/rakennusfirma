@@ -8,5 +8,5 @@ export default defineConfig({
     tailwind(),
     sitemap(),
   ],
-  site: 'https://www.example.fi', // TODO: vaihda asiakkaan domainiin
+  site: 'https://www.rakennuspalvelutturku.fi/',
 });

@@ -7,21 +7,20 @@
  @tailwind components;
  @tailwind utilities;
 
- /* Estetään sivusuuntainen ylivuoto iOS Safarissa */
- html {
-   overflow-x: hidden;
- }
-
+ /* Estetään sivusuuntainen ylivuoto. Vain body käyttää clip:iä — html:lle ei aseteta overflow-x:hidden,
+    koska se luo Android Chromessa phantom scrollbar -gutteritilan joka näkyy valkoisena viivana footerin reunalla. */
  body {
-   overflow-x: hidden;
-   overscroll-behavior-x: none; /* Estää iOS:n horisontaalisen bounce-scrollauksen moderneissa selaimissa */
+   overflow-x: clip;
+   overscroll-behavior-x: none;
  }
 
+ 
  /* Tasapainotetaan otsakkeet ja otetaan tavutus käyttöön mobiilissa */
  h1, h2, h3, h4 {
    text-wrap: balance;
    hyphens: auto;
  }
+ 
  
  /* Muut Tailwind-luokat */
  @layer components {

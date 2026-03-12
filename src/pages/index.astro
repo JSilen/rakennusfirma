@@ -2,11 +2,89 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Template" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-  <div class="max-w-7xl mx-auto px-4 md:px-8 py-16">
-    <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6">Template</h1>
-    <p class="text-lg text-gray-600 max-w-2xl">
-      <!-- Etusivun sisältö tähän -->
-    </p>
-  </div>
+<Layout
+  title="Etusivu"
+  description="J&T Rakennuspalvelu Oy on Turussa toimiva rakennuspalvelu"
+  hasHero={true}
+  heroImage="/images/uploads/hero-tausta.webp"
+>
+
+  <!-- Hero desktop -->
+  <section
+    class="relative h-[85svh] -mb-px bg-musta bg-cover bg-center bg-no-repeat hidden lg:flex flex-col justify-center items-center"
+    style="background-image: linear-gradient(rgba(43,43,43,0.7), rgba(43,43,43,0.7)), url('/images/uploads/hero-tausta.webp')"
+  >
+    <!-- Content -->
+    <div class="relative w-full max-w-8xl mx-auto px-80 flex justify-start items-end">
+      <div class="w-[603px] flex flex-col gap-s-6-d">
+
+        <!-- Texts -->
+        <div class="flex flex-col gap-s-3-d">
+          <!-- Tagline + line -->
+          <div class="flex flex-col gap-s-1-d">
+            <div class="inline-flex items-center gap-1.5">
+              <span class="text-valkoinen text-body-large font-light leading-7">Rakentaminen joka kannattaa</span>
+              <div class="w-16 h-px bg-valkoinen"></div>
+            </div>
+            <h1 class="text-valkoinen text-h1-d font-light">Laadukkaat kodin remontoinnit ammattitaidolla</h1>
+          </div>
+          <!-- Description -->
+          <p class="w-[537px] text-valkoinen text-body-large font-light leading-7">
+            Remontit, uudisrakentaminen ja korjaustyöt Turussa, Kaarinassa ja Varsinais&#8209;Suomessa – luotettavasti ja asiakaslähtöisesti.
+          </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex items-center gap-s-3-d">
+          <a href="/yhteystiedot" class="px-s-3-d py-3 bg-oranssi hover:bg-hover-oranssi shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex justify-center items-center text-black text-body-medium font-normal">
+            Ota yhteyttä
+          </a>
+          <a href="/palvelut" class="px-s-2-d py-3 bg-valkoinen hover:bg-hover-oranssi shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex justify-center items-center text-neutral-900 text-body-medium font-normal">
+            Palvelut
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero mobiili -->
+  <section
+    class="relative h-[85svh] -mb-px bg-musta bg-cover bg-center bg-no-repeat flex lg:hidden flex-col justify-center items-center"
+    style="background-image: linear-gradient(rgba(43,43,43,0.7), rgba(43,43,43,0.7)), url('/images/uploads/hero-tausta-mobiili.webp')"
+  >
+    <!-- Content -->
+    <div class="relative w-full px-s-4-m flex justify-start items-end">
+      <div class="flex-1 flex flex-col gap-s-7-m">
+
+        <!-- Texts -->
+        <div class="flex flex-col gap-s-5-m">
+          <!-- Tagline + line -->
+          <div class="flex flex-col gap-s-1-m">
+            <div class="inline-flex items-center gap-1.5">
+              <span class="text-valkoinen text-body-medium font-light leading-5">Rakentaminen joka kannattaa</span>
+              <div class="w-7 h-px bg-valkoinen"></div>
+            </div>
+            <h1 class="text-valkoinen text-h1-m font-light">Laadukkaat kodin remontoinnit ammattitaidolla</h1>
+          </div>
+          <!-- Description -->
+          <p class="text-valkoinen text-body-medium font-light leading-5">
+            Remontit, uudisrakentaminen ja korjaustyöt Turussa, Kaarinassa ja Varsinais&#8209;Suomessa – luotettavasti ja asiakaslähtöisesti.
+          </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex items-center gap-s-3-d">
+          <a href="/yhteystiedot" class="px-s-3-d py-3 bg-oranssi shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex justify-center items-center text-black text-body-medium font-light">
+            Ota yhteyttä
+          </a>
+          <a href="/palvelut" class="px-s-3-d py-3 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] outline outline-1 outline-offset-[-1px] outline-valkoinen flex justify-center items-center text-valkoinen text-body-medium font-light">
+            Palvelut
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 </Layout>
