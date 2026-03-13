@@ -50,7 +50,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body class="bg-harmaa text-valkoinen min-h-screen flex flex-col font-body">
 
-    <header id="site-header" class="bg-musta sticky top-0 z-40">
+    <header id="site-header" class="bg-musta sticky top-0 z-40 transition-transform duration-300">
       <div class="max-w-8xl mx-auto px-s-4-m md:px-[64px] py-4 md:py-s-3-d">
         <nav class="relative flex justify-between items-center">
 
@@ -82,16 +82,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
               </a>
               <div class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block z-50 w-52">
                 <div class="bg-valkoinen text-musta shadow-lg">
-                  <a href="/palvelut/huoneistoremontti" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Huoneistoremontti</a>
-                  <a href="/palvelut/keittioremontti" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Keittiöremontti</a>
-                  <a href="/palvelut/sauna-ja-kylpyhuoneremontti" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Sauna- ja kylpyhuoneremontti</a>
-                  <a href="/palvelut/julkisivuremontti" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Julkisivuremontti</a>
+                  <a href="/palvelut/huoneistoremontit" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Huoneistoremontti</a>
+                  <a href="/palvelut/keittioremontit" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Keittiöremontti</a>
+                  <a href="/palvelut/kylpyhuone-ja-saunaremontti" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Sauna- ja kylpyhuoneremontti</a>
+                  <a href="/palvelut/julkisivuremontit" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Julkisivuremontti</a>
                   <a href="/palvelut/uudisrakentaminen" class="block px-4 py-3 text-base hover:text-oranssi transition-colors">Uudisrakentaminen</a>
                 </div>
               </div>
             </div>
             <a href="/yritys" class="text-base font-medium py-4 hover:text-oranssi transition-colors">Yritys</a>
-            <a href="/galleria" class="text-base font-medium py-4 hover:text-oranssi transition-colors">Galleria</a>
+            <a href="/kuvagalleria" class="text-base font-medium py-4 hover:text-oranssi transition-colors">Galleria</a>
             <a href="/yhteystiedot" class="text-base font-medium py-4 hover:text-oranssi transition-colors">Yhteystiedot</a>
             <a href="tel:+358400603295" class="group flex items-center gap-2 bg-oranssi text-black font-medium px-s-2-d py-[12px] hover:bg-valkoinen transition-all">
               <img src="/images/uploads/puhelin.svg" alt="Puhelimen ikoni" class="w-5 h-5 transition-transform duration-300 group-hover:rotate-[-6deg]" aria-hidden="true" />
@@ -133,15 +133,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
               </svg>
             </button>
             <div id="sub-palvelut" class="hidden flex-col gap-3 pl-4">
-              <a href="/palvelut/huoneistoremontti" class="text-gray-900 text-2xl">Huoneistoremontti</a>
-              <a href="/palvelut/keittioremontti" class="text-gray-900 text-2xl">Keittiöremontti</a>
-              <a href="/palvelut/sauna-ja-kylpyhuoneremontti" class="text-gray-900 text-2xl">Sauna- ja kylpyhuoneremontti</a>
-              <a href="/palvelut/julkisivuremontti" class="text-gray-900 text-2xl">Julkisivuremontti</a>
+              <a href="/palvelut" class="text-gray-900 text-2xl">Kaikki palvelut</a>
+              <a href="/palvelut/huoneistoremontit" class="text-gray-900 text-2xl">Huoneistoremontti</a>
+              <a href="/palvelut/keittioremontit" class="text-gray-900 text-2xl">Keittiöremontti</a>
+              <a href="/palvelut/kylpyhuone-ja-saunaremontti" class="text-gray-900 text-2xl">Sauna- ja kylpyhuoneremontti</a>
+              <a href="/palvelut/julkisivuremontit" class="text-gray-900 text-2xl">Julkisivuremontti</a>
               <a href="/palvelut/uudisrakentaminen" class="text-gray-900 text-2xl">Uudisrakentaminen</a>
             </div>
           </div>
           <a href="/yritys" class="font-heading text-3xl text-gray-900">Yritys</a>
-          <a href="/galleria" class="font-heading text-3xl text-gray-900">Galleria</a>
+          <a href="/kuvagalleria" class="font-heading text-3xl text-gray-900">Galleria</a>
           <a href="/yhteystiedot" class="font-heading text-3xl text-gray-900">Yhteystiedot</a>
         </nav>
       </div>
@@ -167,7 +168,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             <nav class="flex flex-col gap-2 text-base text-valkoinen">
               <a href="/palvelut" class="hover:text-oranssi transition-colors">Palvelut</a>
               <a href="/yritys" class="hover:text-oranssi transition-colors">Yritys</a>
-              <a href="/galleria" class="hover:text-oranssi transition-colors">Galleria</a>
+              <a href="/kuvagalleria" class="hover:text-oranssi transition-colors">Galleria</a>
               <a href="/yhteystiedot" class="hover:text-oranssi transition-colors">Yhteystiedot</a>
             </nav>
           </div>
@@ -221,6 +222,30 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           arrow?.classList.toggle("rotate-180", !isOpen);
         });
       });
+
+      // Hide header on scroll down, show on scroll up
+      const header = document.getElementById("site-header");
+      let lastScrollY = window.scrollY;
+
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+        if (!header) { lastScrollY = currentScrollY; return; }
+
+        if (currentScrollY > lastScrollY && currentScrollY > 80) {
+          // Scrolling down: reset any inline override so CSS transition applies
+          header.style.transitionDuration = "";
+          header.classList.add("-translate-y-full");
+        } else if (currentScrollY < lastScrollY) {
+          // Scrolling up: on mobile show instantly, on desktop keep transition
+          if (window.innerWidth < 1280) {
+            header.style.transitionDuration = "600ms";
+            header.classList.remove("-translate-y-full");
+          } else {
+            header.classList.remove("-translate-y-full");
+          }
+        }
+        lastScrollY = currentScrollY;
+      }, { passive: true });
     </script>
   </body>
 </html>

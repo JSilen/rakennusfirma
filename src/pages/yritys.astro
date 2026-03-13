@@ -1,0 +1,293 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Huoneistoremontit Turku, Kaarina ja Varsinais-Suomi"
+  description="Huoneistoremontit Turku, Kaarinan ja koko Varsinais-Suomi. Toteutamme huoneistoremontit ammattitaidolla, olipa kyseessä pintaremontti tai koko huoneiston laajempi uudistus."
+  hasHero={true}
+>
+
+  <!-- Hero desktop -->
+  <section
+    class="relative h-[75svh] -mb-px bg-musta bg-cover bg-center bg-no-repeat hidden lg:flex flex-col justify-center items-center"
+    style="background-image: linear-gradient(rgba(43,43,43,0.7), rgba(43,43,43,0.7)), url('/images/uploads/miksi-valita-jt-rakennuspalvelut.webp')"
+  >
+    <!-- Content -->
+    <div class="relative w-full max-w-8xl mx-auto px-80 flex justify-start items-end">
+      <div class="w-[603px] flex flex-col gap-s-6-d">
+
+        <!-- Texts -->
+        <div class="flex flex-col gap-s-3-d border-l-2 border-valkoinen pl-s-10-d py-s-3-d">
+          <!-- Tagline + line -->
+          <div class="flex flex-col gap-s-1-d">
+            <div class="inline-flex items-center gap-1.5">
+              <span class="text-valkoinen text-body-large  leading-7">J&T Rakennuspalvelu Oy</span>
+              <div class="w-16 h-px bg-valkoinen"></div>
+            </div>
+            <h1 class="text-valkoinen text-h1-d">Rakentaminen, joka kannattaa</h1>
+          </div>
+          <!-- Description -->
+          <p class="w-[537px] text-valkoinen text-body-large  leading-7">
+            J&T Rakennuspalvelu Oy on luotettava ja kokenut rakennusalan toimija, jolle laatu, huolellisuus ja asiakastyytyväisyys ovat työn perusta.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero mobiili -->
+  <section
+    class="relative h-[70svh] -mb-px bg-musta bg-cover bg-center bg-no-repeat flex lg:hidden flex-col justify-center items-center"
+    style="background-image: linear-gradient(rgba(43,43,43,0.7), rgba(43,43,43,0.7)), url('/images/uploads/miksi-valita-jt-rakennuspalvelut-mobiili.webp')"
+  >
+    <!-- Content -->
+    <div class="relative w-full px-4 flex justify-start items-end">
+      <div class="flex-1 flex flex-col gap-s-7-m">
+
+        <!-- Texts -->
+        <div class="flex flex-col gap-s-5-m border-l-2 border-valkoinen pl-s-4-m py-s-3-m">
+          <!-- Tagline + line -->
+          <div class="flex flex-col gap-s-1-m">
+            <div class="inline-flex items-center gap-1.5">
+              <span class="text-valkoinen text-xl leading-5">Rakentaminen, joka kannattaa</span>
+              <div class="w-7 h-px bg-valkoinen"></div>
+            </div>
+            <h1 class="text-valkoinen text-h1-m">Rakentaminen, joka kannattaa</h1>
+          </div>
+          <!-- Description -->
+          <p class="text-valkoinen text-lg leading-5">
+            J&T Rakennuspalvelu Oy on luotettava ja kokenut rakennusalan toimija, jolle laatu, huolellisuus ja asiakastyytyväisyys ovat työn perusta.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JT section -->
+  <section class="bg-valkoinen text-musta overflow-hidden">
+
+    <!-- Desktop -->
+    <div class="hidden lg:flex max-w-8xl mx-auto py-s-10-d pl-16 gap-32">
+
+      <!-- Left: eyebrow + heading -->
+      <div class="w-[533px] shrink-0 flex flex-col gap-2 pb-s-10-d">
+        <div class="inline-flex items-center gap-1.5">
+          <span class="text-body-medium font-light">Meistä</span>
+          <div class="w-9 h-px bg-musta"></div>
+        </div>
+        <h2 class="text-h2-d font-light">J&T Rakennuspalvelu Oy</h2>
+      </div>
+
+      <!-- Right: intro text + list box -->
+      <div class="flex-1 flex flex-col px-[68px]">
+        <p class="text-body-normal pb-s-3-d">
+          J&T Rakennuspalvelu Oy on vuonna 2015 perustettu rakennusalan asiantuntijayritys. Perustajina toimivat kokeneet ja koulutetut 
+          alan ammattilaiset, Jussi ja Tuomas. Toimintamme ytimessä ovat laatu, luotettavuus ja asiakkaan tarpeiden ymmärtäminen. <br><br>
+          Olemme toteuttaneet lukuisia rakennus‑ ja korjausrakentamisen projekteja – pienistä huoneistoremontoinneista vaativiin julkisivuremontteihin ja uudisrakentamisen kokonaisuuksiin. Palveluksessamme jo yli 10 vuoden kokemus rakennusalalta, ja palvelemme yksityisiä sekä yritys‑ ja taloyhtiöasiakkaita Varsinais‑Suomessa.
+          Meille tärkeintä on, että projektisi sujuu sovitusti ja lopputulos on kestävä, toimiva ja asiakkaan toiveiden mukainen.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Mobiili -->
+    <div class="flex flex-col lg:hidden py-s-10-m px-4 gap-s-6-m">
+
+      <!-- Eyebrow + heading -->
+      <div class="flex flex-col gap-2">
+        <div class="inline-flex items-center gap-1.5">
+          <span class="text-body-medium font-light">Meistä</span>
+          <div class="w-9 h-px bg-musta"></div>
+        </div>
+        <h2 class="text-h2-m font-light">J&T Rakennuspalvelu Oy</h2>
+      </div>
+
+      <!-- Intro text -->
+      <p class="text-body-normal">
+        J&T Rakennuspalvelu Oy on vuonna 2015 perustettu rakennusalan asiantuntijayritys. Perustajina toimivat kokeneet ja koulutetut 
+        alan ammattilaiset, Jussi ja Tuomas. Toimintamme ytimessä ovat laatu, luotettavuus ja asiakkaan tarpeiden ymmärtäminen. <br><br>
+        Olemme toteuttaneet lukuisia rakennus‑ ja korjausrakentamisen projekteja – pienistä huoneistoremontoinneista vaativiin julkisivuremontteihin ja uudisrakentamisen kokonaisuuksiin. Palveluksessamme jo yli 10 vuoden kokemus rakennusalalta, ja palvelemme yksityisiä sekä yritys‑ ja taloyhtiöasiakkaita Varsinais‑Suomessa.
+        Meille tärkeintä on, että projektisi sujuu sovitusti ja lopputulos on kestävä, toimiva ja asiakkaan toiveiden mukainen.
+      </p>
+
+    </div>
+  </section>
+
+    <!-- Näin remontti etenee -->
+  <section class="bg-harmaa text-musta">
+
+    <!-- Desktop -->
+    <div class="hidden lg:flex flex-col items-center gap-s-7-d max-w-8xl mx-auto py-s-10-d px-[68px]">
+
+      <!-- Eyebrow + heading -->
+      <div class="flex flex-col items-center gap-2">
+        <div class="inline-flex items-center gap-1.5">
+          <span class="text-body-medium font-light">Miksi asiakkaamme valitsevat meidät</span>
+          <div class="w-9 h-px bg-musta"></div>
+        </div>
+        <h2 class="text-h2-d font-light text-center">Luotettava kumppani rakennusprojekteihin</h2>
+      </div>
+
+      <!-- Steps -->
+      <div class="grid grid-cols-4 gap-6 w-full">
+
+        <div class="flex flex-col items-center gap-4 px-s-2-d">
+          <img src="/images/uploads/1.png" alt="" aria-hidden="true" class="w-24 h-24 object-contain" />
+          <div class="flex flex-col items-center gap-s-3-d">
+            <h3 class="text-h4-d font-light text-center min-h-[62.4px]">Yli 10 vuoden kokemus</h3>
+            <p class="text-body-medium font-light text-center">Toteutamme rakennus- ja remonttiprojekteja luotettavasti.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-4 px-s-2-d">
+          <img src="/images/uploads/2.png" alt="" aria-hidden="true" class="w-24 h-24 object-contain" />
+          <div class="flex flex-col items-center gap-s-3-d">
+            <h3 class="text-h4-d font-light text-center min-h-[62.4px]">Laadukkaat ratkaisut </h3>
+            <p class="text-body-medium font-light text-center">Kestävä ja huolellinen työnjälki on meille kunnia-asia.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-4 px-s-2-d">
+          <img src="/images/uploads/3.png" alt="" aria-hidden="true" class="w-24 h-24 object-contain" />
+          <div class="flex flex-col items-center gap-s-3-d">
+            <h3 class="text-h4-d font-light text-center min-h-[62.4px]">Asiakaslähtöinen palvelu</h3>
+            <p class="text-body-medium font-light text-center">Projektisi sujuu sovitusti ja toiveidesi mukaisesti.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-4 px-s-2-d">
+          <img src="/images/uploads/4.png" alt="" aria-hidden="true" class="w-24 h-24 object-contain" />
+          <div class="flex flex-col items-center gap-s-3-d">
+            <h3 class="text-h4-d font-light text-center min-h-[62.4px]">Paikallinen asiantuntemus  </h3>
+            <p class="text-body-medium font-light text-center">Palvelemme yksityisiä, taloyhtiöitä ja yrityksiä Varsinais-Suomessa.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobiili -->
+    <div class="flex flex-col lg:hidden items-center gap-s-6-m py-s-10-m px-4">
+
+      <!-- Eyebrow + heading -->
+      <div class="flex flex-col items-center gap-2">
+        <div class="inline-flex items-center gap-1.5">
+          <span class="text-body-medium font-light">Miksi asiakkaamme valitsevat meidät</span>
+          <div class="w-7 h-px bg-musta"></div>
+        </div>
+        <h2 class="text-h2-m font-light text-center">Luotettava kumppani rakennusprojekteihin</h2>
+      </div>
+
+      <!-- Steps -->
+      <div class="flex flex-col gap-s-7-m w-full">
+
+        <div class="flex flex-col items-center gap-3">
+          <img src="/images/uploads/1.png" alt="" aria-hidden="true" class="w-20 h-20 object-contain" />
+          <div class="flex flex-col items-center gap-4">
+            <h3 class="text-h4-m font-light text-center">Yli 10 vuoden kokemus</h3>
+            <p class="text-body-medium font-light text-center">Toteutamme rakennus- ja remonttiprojekteja luotettavasti.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-3">
+          <img src="/images/uploads/2.png" alt="" aria-hidden="true" class="w-20 h-20 object-contain" />
+          <div class="flex flex-col items-center gap-4">
+            <h3 class="text-h4-m font-light text-center">Laadukkaat ratkaisut</h3>
+            <p class="text-body-medium font-light text-center">Kestävä ja huolellinen työnjälki on meille kunnia-asia.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-3">
+          <img src="/images/uploads/3.png" alt="" aria-hidden="true" class="w-20 h-20 object-contain" />
+          <div class="flex flex-col items-center gap-4">
+            <h3 class="text-h4-m font-light text-center">Asiakaslähtöinen palvelu </h3>
+            <p class="text-body-medium font-light text-center">Projektisi sujuu sovitusti ja toiveidesi mukaisesti.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-3">
+          <img src="/images/uploads/4.png" alt="" aria-hidden="true" class="w-20 h-20 object-contain" />
+          <div class="flex flex-col items-center gap-4">
+            <h3 class="text-h4-m font-light text-center">Paikallinen asiantuntemus</h3>
+            <p class="text-body-medium font-light text-center">Palvelemme yksityisiä, taloyhtiöitä ja yrityksiä Varsinais-Suomessa.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+      <!-- Remontti vai uudistus – desktop -->
+  <section class="hidden lg:block relative lg:h-[700px]">
+
+    <!-- Taustakuva -->
+    <img
+      src="/images/uploads/remontti-vai-uudistus.webp"
+      alt="J&T Rakennuspalvelu – miksi valita meidät"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-musta opacity-40"></div>
+
+    <!-- Sisältö: kortti bottom-right -->
+    <div class="relative h-full flex flex-col justify-end items-end">
+
+      <!-- Kortti -->
+      <div class="relative w-[57%] bg-harmaa/80 px-s-7-d py-s-6-d flex flex-col gap-s-3-d">
+
+        <!-- Tagline -->
+        <div class="inline-flex items-center gap-1.5">
+          <span class="text-musta text-body-large leading-7">Remontit, joihin voit luottaa</span>
+          <div class="w-9 h-px bg-musta"></div>
+        </div>
+
+        <h2 class="text-musta text-h2-d  max-w-2xl">Kaipaatko remonttia tai uudistusta?</h2>
+
+        <p class="text-musta text-body-normal  leading-6 max-w-2xl mb-s-3-d">
+          Olipa kyse keittiöstä, kylpyhuoneesta, saunasta, julkisivusta tai uudisrakentamisesta, hoidamme kaiken projektin suunnittelusta valmiiseen lopputulokseen – 
+          ammattitaidolla, luotettavasti ja tarpeidesi mukaan. Ota yhteyttä, niin suunnitellaan ja toteutetaan yhdessä juuri sinun kaipaamasi remontti tai uudistus.
+        </p>
+    
+        <a href="/meista" class="self-start px-s-3-d py-3 bg-oranssi hover:bg-hover-oranssi shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex justify-center items-center text-black text-body-medium font-normal">
+          Ota yhteyttä
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Remontti vai uudistus – mobiili -->
+  <section class="flex lg:hidden relative min-h-[600px]">
+
+    <!-- Taustakuva koko section -->
+    <img
+      src="/images/uploads/remontti-vai-uudistus-mobiili.webp"
+      alt="J&T Rakennuspalvelu – miksi valita meidät"
+      class="absolute inset-0 w-full h-full object-cover object-bottom"
+    />
+
+    <!-- Tekstilaatikko kuvan päällä, alhaalla -->
+    <div class="relative mt-auto ml-4 bg-harmaa/80 flex flex-col gap-s-5-m px-s-4-m pt-s-6-m pb-s-8-m">
+
+      <!-- Tagline -->
+      <div class="inline-flex items-center gap-1.5">
+        <span class="text-musta text-body-medium leading-5">Remontit, joihin voit luottaa</span>
+        <div class="w-9 h-px bg-musta"></div>
+      </div>
+
+      <h2 class="text-musta text-h2-m ">Kaipaatko remonttia tai uudistusta?</h2>
+
+      <p class="text-musta text-body-normal  leading-6">
+        Olipa kyse keittiöstä, kylpyhuoneesta, saunasta, julkisivusta tai uudisrakentamisesta, hoidamme kaiken 
+        projektin suunnittelusta valmiiseen lopputulokseen – ammattitaidolla, luotettavasti ja tarpeidesi mukaan. 
+        Ota yhteyttä, niin suunnitellaan ja toteutetaan yhdessä juuri sinun kaipaamasi remontti tai uudistus.
+      </p>
+
+      <a href="/yhteystiedot" class="self-start px-s-3-d py-3 bg-oranssi shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex justify-center items-center text-black text-body-medium font-normal">
+        Ota yhteyttä
+      </a>
+
+    </div>
+  </section>
+
+</Layout>

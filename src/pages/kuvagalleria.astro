@@ -1,0 +1,266 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Huoneistoremontit Turku, Kaarina ja Varsinais-Suomi"
+  description="Huoneistoremontit Turku, Kaarinan ja koko Varsinais-Suomi. Toteutamme huoneistoremontit ammattitaidolla, olipa kyseessä pintaremontti tai koko huoneiston laajempi uudistus."
+  hasHero={true}
+>
+
+  <!-- Hero desktop -->
+  <section
+    class="relative h-[75svh] -mb-px bg-musta bg-cover bg-center bg-no-repeat hidden lg:flex flex-col justify-center items-center"
+    style="background-image: linear-gradient(rgba(43,43,43,0.7), rgba(43,43,43,0.7)), url('/images/uploads/galleria-hero.webp')"
+  >
+    <!-- Content -->
+    <div class="relative w-full max-w-8xl mx-auto px-80 flex justify-start items-end">
+      <div class="w-[603px] flex flex-col gap-s-6-d">
+
+        <!-- Texts -->
+        <div class="flex flex-col gap-s-3-d border-l-2 border-valkoinen pl-s-10-d py-s-3-d">
+          <!-- Tagline + line -->
+          <div class="flex flex-col gap-s-1-d">
+            <div class="inline-flex items-center gap-1.5">
+              <span class="text-valkoinen text-body-large  leading-7">Rakentaminen, joka kannattaa</span>
+              <div class="w-16 h-px bg-valkoinen"></div>
+            </div>
+            <h1 class="text-valkoinen text-h1-d">Galleria</h1>
+          </div>
+          <!-- Description -->
+          <p class="w-[537px] text-valkoinen text-body-large  leading-7">
+            Kuvia toteuttamistamme kohteista – selkeää työnjälkeä ja huolellista tekemistä erilaisissa rakennus- ja remonttiprojekteissa.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero mobiili -->
+  <section
+    class="relative h-[70svh] -mb-px bg-musta bg-cover bg-center bg-no-repeat flex lg:hidden flex-col justify-center items-center"
+    style="background-image: linear-gradient(rgba(43,43,43,0.7), rgba(43,43,43,0.7)), url('/images/uploads/galleria-hero.webp')"
+  >
+    <!-- Content -->
+    <div class="relative w-full px-4 flex justify-start items-end">
+      <div class="flex-1 flex flex-col gap-s-7-m">
+
+        <!-- Texts -->
+        <div class="flex flex-col gap-s-5-m border-l-2 border-valkoinen pl-s-4-m py-s-3-m">
+          <!-- Tagline + line -->
+          <div class="flex flex-col gap-s-1-m">
+            <div class="inline-flex items-center gap-1.5">
+              <span class="text-valkoinen text-xl leading-5">Rakentaminen, joka kannattaa</span>
+              <div class="w-7 h-px bg-valkoinen"></div>
+            </div>
+            <h1 class="text-valkoinen text-h1-m">Galleria</h1>
+          </div>
+          <!-- Description -->
+          <p class="text-valkoinen text-lg leading-5">
+            Kuvia toteuttamistamme kohteista – selkeää työnjälkeä ja huolellista tekemistä erilaisissa rakennus- ja remonttiprojekteissa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Galleria -->
+  <section class="bg-valkoinen text-musta overflow-hidden">
+
+    <!-- Desktop -->
+    <div class="hidden lg:flex max-w-8xl mx-auto pt-s-10-d pb-0 pl-16 gap-32">
+
+      <!-- Left: eyebrow + heading -->
+      <div class="w-[533px] shrink-0 flex flex-col gap-2 pb-s-10-d">
+        <div class="inline-flex items-center gap-1.5">
+          <span class="text-body-medium font-light">Galleria</span>
+          <div class="w-9 h-px bg-musta"></div>
+        </div>
+        <h2 class="text-h2-d font-light">Tehtyjä töitämme</h2>
+      </div>
+
+      <!-- Right: intro text + list box -->
+      <div class="flex-1 flex flex-col px-[68px]">
+        <p class="text-body-normal pb-s-3-d">
+          Tältä sivulta löydät esimerkkejä toteuttuista remonteista ja rakennusprojekteista. Mukana on niin pintaremontteja kuin laajempia kokonaisuuksia, joissa on uudistettu ja rakennettu tiloja toimiviksi ja kestäviksi. <br><br>
+          Jokainen projekti on toteutettu huolellisesti ja asiakkaan toiveet huomioiden.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Mobiili -->
+    <div class="flex flex-col lg:hidden pt-s-10-m pb-0 px-4 gap-s-3-m">
+
+      <!-- Eyebrow + heading -->
+      <div class="flex flex-col gap-2">
+        <div class="inline-flex items-center gap-1.5">
+          <span class="text-body-medium font-light">Galleria</span>
+          <div class="w-9 h-px bg-musta"></div>
+        </div>
+        <h2 class="text-h2-m font-light">Tehtyjä töitämme</h2>
+      </div>
+
+      <!-- Intro text -->
+      <p class="text-body-normal">
+        Tältä sivulta löydät esimerkkejä toteuttuista remonteista ja rakennusprojekteista. Mukana on niin pintaremontteja kuin laajempia kokonaisuuksia, joissa on uudistettu ja rakennettu tiloja toimiviksi ja kestäviksi. <br><br>
+          Jokainen projekti on toteutettu huolellisesti ja asiakkaan toiveet huomioiden.
+      </p>
+    </div>
+  </section>
+
+  <!-- Kuvagridi -->
+  <section class="bg-valkoinen py-s-10-m lg:py-s-10-d">
+    <div class="max-w-8xl mx-auto px-4 md:px-[64px]">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="overflow-hidden"><img src="/images/uploads/IMG_01881.webp" alt="Remonttikohde" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/IMG_01911.webp" alt="Remonttikohde" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/IMG_01932.webp" alt="Remonttikohde" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/IMG_01971.webp" alt="Remonttikohde" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/IMG_02023.webp" alt="Remonttikohde" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Pohja2.webp" alt="Rakennuksen pohja" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Pohja3.webp" alt="Rakennuksen pohja" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Pohja11.webp" alt="Rakennuksen pohja" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Runko1.webp" alt="Rakennuksen runko" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Runko2.webp" alt="Rakennuksen runko" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Runko5.webp" alt="Rakennuksen runko" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Runko6.webp" alt="Rakennuksen runko" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Runko7.webp" alt="Rakennuksen runko" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Sauna-2.webp" alt="Sauna" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Sauna-3.webp" alt="Sauna" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Sauna-11.webp" alt="Sauna" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+        <div class="overflow-hidden"><img src="/images/uploads/Sisä4.webp" alt="Sisätila" class="gallery-img w-full aspect-[4/3] object-cover cursor-pointer transition-transform duration-300 hover:scale-105" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Remontti vai uudistus – desktop -->
+  <section class="hidden lg:block relative lg:h-[700px]">
+
+    <!-- Taustakuva -->
+    <img
+      src="/images/uploads/remontti-vai-uudistus.webp"
+      alt="J&T Rakennuspalvelu – miksi valita meidät"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-musta opacity-40"></div>
+
+    <!-- Sisältö: kortti bottom-right -->
+    <div class="relative h-full flex flex-col justify-end items-end">
+
+      <!-- Kortti -->
+      <div class="relative w-[57%] bg-harmaa/80 px-s-7-d py-s-6-d flex flex-col gap-s-3-d">
+
+        <!-- Tagline -->
+        <div class="inline-flex items-center gap-1.5">
+          <span class="text-musta text-body-large leading-7">Remontit, joihin voit luottaa</span>
+          <div class="w-9 h-px bg-musta"></div>
+        </div>
+
+        <h2 class="text-musta text-h2-d  max-w-2xl">Kaipaatko remonttia tai uudistusta?</h2>
+
+        <p class="text-musta text-body-normal  leading-6 max-w-2xl mb-s-3-d">
+          Olipa kyse keittiöstä, kylpyhuoneesta, saunasta, julkisivusta tai uudisrakentamisesta, hoidamme kaiken projektin suunnittelusta valmiiseen lopputulokseen – 
+          ammattitaidolla, luotettavasti ja tarpeidesi mukaan. Ota yhteyttä, niin suunnitellaan ja toteutetaan yhdessä juuri sinun kaipaamasi remontti tai uudistus.
+        </p>
+    
+        <a href="/meista" class="self-start px-s-3-d py-3 bg-oranssi hover:bg-hover-oranssi shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex justify-center items-center text-black text-body-medium font-normal">
+          Ota yhteyttä
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Remontti vai uudistus – mobiili -->
+  <section class="flex lg:hidden relative min-h-[600px]">
+
+    <!-- Taustakuva koko section -->
+    <img
+      src="/images/uploads/remontti-vai-uudistus-mobiili.webp"
+      alt="J&T Rakennuspalvelu – miksi valita meidät"
+      class="absolute inset-0 w-full h-full object-cover object-bottom"
+    />
+
+    <!-- Tekstilaatikko kuvan päällä, alhaalla -->
+    <div class="relative mt-auto ml-4 bg-harmaa/80 flex flex-col gap-s-5-m px-s-4-m pt-s-6-m pb-s-8-m">
+
+      <!-- Tagline -->
+      <div class="inline-flex items-center gap-1.5">
+        <span class="text-musta text-body-medium leading-5">Remontit, joihin voit luottaa</span>
+        <div class="w-9 h-px bg-musta"></div>
+      </div>
+
+      <h2 class="text-musta text-h2-m ">Kaipaatko remonttia tai uudistusta?</h2>
+
+      <p class="text-musta text-body-normal  leading-6">
+        Olipa kyse keittiöstä, kylpyhuoneesta, saunasta, julkisivusta tai uudisrakentamisesta, hoidamme kaiken 
+        projektin suunnittelusta valmiiseen lopputulokseen – ammattitaidolla, luotettavasti ja tarpeidesi mukaan. 
+        Ota yhteyttä, niin suunnitellaan ja toteutetaan yhdessä juuri sinun kaipaamasi remontti tai uudistus.
+      </p>
+
+      <a href="/yhteystiedot" class="self-start px-s-3-d py-3 bg-oranssi shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex justify-center items-center text-black text-body-medium font-normal">
+        Ota yhteyttä
+      </a>
+
+    </div>
+  </section>
+
+</Layout>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[200] bg-black/90 hidden items-center justify-center" role="dialog" aria-modal="true" aria-label="Kuvan suurennos">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white p-2" aria-label="Sulje">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <button id="lightbox-prev" class="absolute left-2 md:left-6 text-white p-2" aria-label="Edellinen kuva">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-h-[90svh] max-w-[90vw] object-contain" />
+    <button id="lightbox-next" class="absolute right-2 md:right-6 text-white p-2" aria-label="Seuraava kuva">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    const imgs = Array.from(document.querySelectorAll<HTMLImageElement>(".gallery-img"));
+    const lightbox = document.getElementById("lightbox")!;
+    const lbImg = document.getElementById("lightbox-img") as HTMLImageElement;
+    let current = 0;
+
+    function open(index: number) {
+      current = index;
+      lbImg.src = imgs[current].src;
+      lbImg.alt = imgs[current].alt;
+      lightbox.classList.remove("hidden");
+      lightbox.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+
+    function close() {
+      lightbox.classList.add("hidden");
+      lightbox.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+
+    function prev() { open((current - 1 + imgs.length) % imgs.length); }
+    function next() { open((current + 1) % imgs.length); }
+
+    imgs.forEach((img, i) => img.addEventListener("click", () => open(i)));
+    document.getElementById("lightbox-close")!.addEventListener("click", close);
+    document.getElementById("lightbox-prev")!.addEventListener("click", prev);
+    document.getElementById("lightbox-next")!.addEventListener("click", next);
+    lightbox.addEventListener("click", (e) => { if (e.target === lightbox) close(); });
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.classList.contains("hidden")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    });
+  </script>
